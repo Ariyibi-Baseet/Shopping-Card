@@ -1,0 +1,97 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    min-height:100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    font-size:16px !important;
+}
+
+img{
+    width:200px;
+    height:200px;
+}
+
+#app{
+    max-width:500px;
+    height:auto;
+    padding:20px;
+    background:#fff;
+    position:relative;
+    border-radius:5px;
+    box-shadow:3px 8px 18px teal;
+}
+
+.product-wrapper{
+    display:flex;
+    gap:1rem;
+}
+
+.product-description > small,a{
+    font-size:10px;
+}
+
+.product-description > small{
+    background-color:rgb(46, 161, 161);
+    color:#fff;
+    padding:2px 4px;
+    border-radius:6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-description > h1{
+    font-size:18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.product-description > p{
+    font-size:10px;
+    font-family: 'Poppins', sans-serif;
+    text-align:left;
+}
+
+.variant{
+    width:13px;
+    height:13px;
+    border-radius:100%;
+    margin:4px 0 4px 0;
+}
+.variant::before{
+
+}
+
+.product-description > button{
+    font-size:10px;
+    border:none;
+    background-color:teal;
+    border-radius:5px;
+    padding:7px 15px;
+    cursor: pointer;
+    color:#fff;
+    margin:5px 5px 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-remove{
+    background-color: crimson !important;
+}
+
+.disabledButton{
+    user-select: none;
+    background-color: gray !important;
+    cursor:not-allowed
+}
+
+
+.cart{
+    position:absolute;
+    display:block;
+    top:10px;
+    right:10px;
+    font-size:12px;
+    font-weight:bold;
+    color:teal;
+}
+

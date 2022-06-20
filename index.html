@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Shopping card - Sneakers</title>
+</head>
+<body>
+    <div id="app">
+        <div class="product-wrapper">
+            <div class="product-image">
+                <img :src="productImage" :alt="imageAlt">
+            </div>
+            <div class="product-description">
+                <small>Product name</small>
+                <h1>{{ product }}</h1>
+                <small>Product Description</small>
+                <p>{{ productDescription}}</p>
+                <a :href="productLink">SneakersLive</a>
+                <br>
+                <small>Availability</small>
+                <p v-if="inventory >= 100">In Stock</p>
+                <p v-else-if="inventory <= 50 && inventory > 0">Almost sold out</p>
+                <p v-else="inventory = 0">Out of stock</p>
+                <!-- <p v-if="onSale">on sale</p> -->
+                <!-- <ul>
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul> -->
+                <!-- <div v-for="(item, index) in items" :key="index">
+                </div> -->
+                <div class="variant" v-for="variant in variants" :key="variant.id" @click="updateImage(variant.image)" :style="{backgroundColor: variant.color}">
+                    <!-- {{ variant.id }} -->
+                </div>
+
+                <!-- <ul>
+                    <li v-for="size in sizes"> {{ size  }}</li>
+                </ul>  -->
+                        <!-- <p>{{ productDescription }}</p> -->
+        <button class="btn" @click="addToCart" :disabled="!onSale" :class="{disabledButton : !onSale}"> <i class="fa-solid fa-shopping-cart"></i> Add to cart</button>
+        <button class="btn btn-remove" @click="removeFromCart"> Remove from Cart</button>
+        <span class="cart"><i class="fa-solid fa-cart-shopping"></i>(<span>{{ cart }}</span>)</span>
+            </div>
+        </div>
+    </div>
+
+<script src="./app.js"></script>
+</body>
+</html>
+
+
+

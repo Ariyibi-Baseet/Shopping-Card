@@ -7,6 +7,7 @@ const app = Vue.createApp({
             //     border: '10px solid black'
             // },
             cart:0,
+            logo: "./img/logo.svg",
             product: 'Sneakers',
             // task one
             productDescription: 'Athletic or casual rubber-soled shoes are called sneakers. Before you walk your neighbor\'s Great Dane, you\'ll have to take off your...',
@@ -17,8 +18,8 @@ const app = Vue.createApp({
             onSale:true,
             details: ['50% cotton', '30% wool', '20% polyester'],
             variants: [
-                {id: 2234, color : 'teal', image: './img/sneakers-teal.png'},
-                {id: 2235, color : 'red', image: './img/sneakers-red.png'},
+                {id: 2234, color : 'teal', image: './img/sneakers-teal.png', title:'teal sneakers'},
+                {id: 2235, color : 'red', image: './img/sneakers-red.png', title: 'red sneakers'},
             ],
             sizes:['28','55','90']
         }

@@ -24,6 +24,8 @@
     <meta property="twitter:description" content="Sneakers shopping card where you can purchase sneakers online with color varieties. created by Ariyibi Baseet Adekunle (Frontend web developer) using Vue cdn">
     <meta property="twitter:image" content="./img/sneakers-teal.png">
 
+    <link rel="stylesheet" href="./style.css">
+
     <!--===================== Google fonts =============== -->
     <!-- Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap" rel="stylesheet">
@@ -36,6 +38,9 @@
 </head>
 <body>
     <div id="app">
+        <div class="logo">
+            <img :src="logo">
+        </div>
         <div class="product-wrapper">
             <div class="product-image">
                 <img :src="productImage" :alt="imageAlt">
@@ -45,9 +50,9 @@
                 <h1>{{ product }}</h1>
                 <small>Product Description</small>
                 <p>{{ productDescription}}</p>
-                <a :href="productLink">SneakersLive</a>
+                <a :href="productLink" class="read-more">Read more >></a>
                 <br>
-                <small>Availability</small>
+                <small class="available">Availability</small>
                 <p v-if="inventory >= 100">In Stock</p>
                 <p v-else-if="inventory <= 50 && inventory > 0">Almost sold out</p>
                 <p v-else="inventory = 0">Out of stock</p>
@@ -57,10 +62,9 @@
                 </ul> -->
                 <!-- <div v-for="(item, index) in items" :key="index">
                 </div> -->
-                <div class="variant" v-for="variant in variants" :key="variant.id" @click="updateImage(variant.image)" :style="{backgroundColor: variant.color}">
+                <div class="variant" v-for="variant in variants" :key="variant.id" @click="updateImage(variant.image)" :style="{backgroundColor: variant.color}" :title="variant.title">
                     <!-- {{ variant.id }} -->
                 </div>
-
                 <!-- <ul>
                     <li v-for="size in sizes"> {{ size  }}</li>
                 </ul>  -->

@@ -112,3 +112,14 @@ body{
     color:teal;
 }
 
+
+@media screen and (max-width:600px)
+{
+    #app{
+        padding:50px 10px;
+    }
+    .product-wrapper{
+        flex-direction: column;
+        max-width:320px;
+    }
+}

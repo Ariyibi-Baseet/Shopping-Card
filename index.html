@@ -56,19 +56,8 @@
                 <p v-if="inventory >= 100">In Stock</p>
                 <p v-else-if="inventory <= 50 && inventory > 0">Almost sold out</p>
                 <p v-else="inventory = 0">Out of stock</p>
-                <!-- <p v-if="onSale">on sale</p> -->
-                <!-- <ul>
-                    <li v-for="detail in details">{{ detail }}</li>
-                </ul> -->
-                <!-- <div v-for="(item, index) in items" :key="index">
-                </div> -->
-                <div class="variant" v-for="variant in variants" :key="variant.id" @click="updateImage(variant.image)" :style="{backgroundColor: variant.color}" :title="variant.title">
-                    <!-- {{ variant.id }} -->
-                </div>
-                <!-- <ul>
-                    <li v-for="size in sizes"> {{ size  }}</li>
-                </ul>  -->
-                        <!-- <p>{{ productDescription }}</p> -->
+                <div class="variant" v-for="variant in variants" :key="variant.id" @click="updateImage(variant.image)" :style="{backgroundColor: variant.color}" :title="variant.title"></div>
+
         <button class="btn" @click="addToCart" :disabled="!onSale" :class="{disabledButton : !onSale}"> <i class="fa-solid fa-shopping-cart"></i> Add to cart</button>
         <button class="btn btn-remove" @click="removeFromCart"> Remove from Cart</button>
         <span class="cart"><i class="fa-solid fa-cart-shopping"></i>(<span>{{ cart }}</span>)</span>

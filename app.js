@@ -25,6 +25,7 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        // i want to display a message when the user is viewing with mobile device
         addToCart()
         {
             this.cart ++
